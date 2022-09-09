@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "abbreviationList": [
+        {
+            "name": "Array",
+            "prefix": "arr",
+            "expand": {
+                "prefix": "[",
+                "body": "$$INDEX",
+                "separator": ", ",
+                "suffix": "]"
+            }
+        },
+        {
+            "name": "Tuple",
+            "prefix": "tup",
+            "expand": {
+                "prefix": "(",
+                "body": "$$INDEX",
+                "separator": ", ",
+                "suffix": ")"
+            }
+        },
+        {
+            "name": "Switch",
+            "prefix": "switch",
+            "expand": {
+                "prefix": "switch ($$INDEX) {\n",
+                "body": "\tcase $$INDEX: $$INDEX\n\t\tbreak;",
+                "separator": "\n",
+                "suffix": "\n\tdefault: $$INDEX\n\t\tbreak;"
+            }
+        }
+    ]
+}
